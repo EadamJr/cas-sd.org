@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Climate Action in Sudan – CAS</title>
+<meta name="description" content="A youth-led technical platform bridging institutional climate gaps in Sudan. From Challenge to Empowerment — 2026–2030."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g9:#0d2b1a;--g8:#1a4a2e;--g7:#2d6e47;--g6:#3a8a5a;--g4:#5cb87a;--g2:#b2dfcc;--g1:#e6f4ec;
+  --am:#e87c2a;--aml:#f5a55e;--amd:#c25e10;
+  --cream:#faf7f2;--ink:#1a1a1a;--inkm:#4a4a4a;--white:#ffffff;
+  --r:14px;--tr:0.35s cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;font-size:15px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.8rem 0;transition:background .3s,box-shadow .3s}
+.nav.scrolled{background:rgba(250,247,242,.96);backdrop-filter:blur(10px);box-shadow:0 1px 18px rgba(0,0,0,.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.5rem}
+.nav-logo{display:flex;align-items:center;gap:.5rem}
+.nav-logo img{width:36px;height:36px;object-fit:contain;border-radius:50%}
+.nav-logo span{font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;color:var(--g8)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--inkm);transition:color .2s}
+.nav-links a:hover{color:var(--g7)}
+.nav-cta{background:var(--g7)!important;color:var(--white)!important;padding:.45rem 1.2rem;border-radius:50px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.burger span{display:block;width:22px;height:2px;background:var(--g8);border-radius:2px;transition:var(--tr)}
+.mmenu{display:none;position:fixed;inset:0;background:var(--cream);z-index:99;align-items:center;justify-content:center;flex-direction:column}
+.mmenu.open{display:flex}
+.mmenu a{font-family:'Fraunces',serif;font-size:2rem;font-weight:700;color:var(--g8);display:block;margin:1rem 0}
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--g9);padding:7rem 1.5rem 5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(58,138,90,.4),transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,124,42,.22),transparent 65%);pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:2;width:100%}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:var(--g2);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .9rem;border-radius:50px;margin-bottom:1.75rem}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(3rem,8vw,7rem);font-weight:900;line-height:.95;color:var(--white);margin-bottom:1.25rem}
+.hero h1 em{color:var(--aml);font-style:italic}
+.hero-tag{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.5rem);color:var(--g2);margin-bottom:1.25rem}
+.hero p.sub{max-width:520px;color:rgba(255,255,255,.68);font-size:1rem;margin-bottom:2.25rem}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.35);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}
+.scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.35),transparent)}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.75rem;border-radius:50px;font-size:.9rem;font-weight:500;cursor:pointer;border:none;transition:transform var(--tr),box-shadow var(--tr);font-family:'DM Sans',sans-serif}
+.btn-primary{background:var(--g7);color:var(--white);box-shadow:0 4px 18px rgba(45,110,71,.35)}
+.btn-primary:hover{background:var(--g6);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn-white{background:var(--white);color:var(--g8);box-shadow:0 4px 18px rgba(0,0,0,.12)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.18)}
+.lbl{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--am);margin-bottom:.6rem}
+.lbl-lt{color:var(--aml)}
+.sec-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;color:var(--g9);margin-bottom:1rem}
+.sec-desc{max-width:600px;color:var(--inkm);font-size:.97rem}
+.sec-hd{margin-bottom:3rem}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.rd{transition-delay:.12s}.rd2{transition-delay:.24s}
+/* ABOUT */
+.about{padding:6rem 0;background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text p{color:var(--inkm);font-size:.97rem;margin-bottom:.85rem}
+.about-cards{display:grid;gap:1rem}
+.about-card{background:var(--white);border-radius:var(--r);padding:1.25rem 1.5rem;border:1px solid var(--g1);display:flex;gap:.9rem;align-items:flex-start;transition:transform var(--tr)}
+.about-card:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,0,0,.07)}
+.about-icon{font-size:1.5rem;flex-shrink:0}
+.about-card h3{font-size:.97rem;font-weight:600;color:var(--g8);margin-bottom:.25rem}
+.about-card p{font-size:.85rem;color:var(--inkm)}
+/* CHALLENGES */
+.challenges{padding:6rem 0;background:var(--g9);position:relative;overflow:hidden}
+.challenges::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at top right,rgba(58,138,90,.25),transparent 60%)}
+.challenges .sec-title{color:var(--white)}
+.chal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;position:relative}
+.chal-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:2rem;transition:transform var(--tr),border-color var(--tr)}
+.chal-card:hover{transform:translateY(-4px);border-color:rgba(92,184,122,.35)}
+.chal-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:900;color:rgba(92,184,122,.18);line-height:1;margin-bottom:.75rem}
+.chal-card h3{font-size:1.1rem;font-weight:600;color:var(--white);margin-bottom:.6rem}
+.chal-card p{color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.7}
+/* TEAMS */
+.teams{padding:6rem 0;background:var(--cream)}
+.teams-intro{text-align:center;margin-bottom:3rem}
+.teams-intro .sec-desc{margin:0 auto}
+.teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.team-card{background:var(--white);border-radius:var(--r);padding:2rem;border:1px solid var(--g1);box-shadow:0 2px 16px rgba(0,0,0,.04);transition:transform var(--tr),box-shadow var(--tr)}
+.team-card:hover{transform:translateY(-5px);box-shadow:0 10px 35px rgba(0,0,0,.09)}
+.tc-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.tc-tag{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .7rem;border-radius:50px;background:rgba(45,110,71,.1);color:var(--g7)}
+.tc-tag.amber{background:rgba(232,124,42,.1);color:var(--amd)}
+.tc-head h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--g9)}
+.team-card > p{color:var(--inkm);font-size:.9rem;line-height:1.7;margin-bottom:1rem}
+.tc-list{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.tc-list li{font-size:.82rem;color:var(--inkm);padding-left:.9rem;position:relative}
+.tc-list li::before{content:'▸';position:absolute;left:0;color:var(--g6);font-size:.7rem;top:2px}
+/* CCT */
+.cct{padding:6rem 0;background:var(--g1)}
+.cct .sec-title{color:var(--g9)}
+.cct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.cct-item{background:var(--white);border-radius:var(--r);padding:1.5rem;display:flex;gap:.85rem;align-items:flex-start;border:1px solid rgba(45,110,71,.1);transition:transform var(--tr)}
+.cct-item:hover{transform:translateY(-3px);box-shadow:0 6px 22px rgba(0,0,0,.06)}
+.cct-icon{font-size:1.4rem;flex-shrink:0}
+.cct-item strong{font-size:.95rem;color:var(--g8);display:block;margin-bottom:.25rem}
+.cct-item p{font-size:.82rem;color:var(--inkm)}
+/* ADVISORY */
+.advisory{padding:6rem 0;background:var(--cream)}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.adv-card{background:var(--white);border-radius:var(--r);padding:2rem;text-align:center;border:1px solid var(--g1);box-shadow:0 2px 14px rgba(0,0,0,.04);transition:transform var(--tr)}
+.adv-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.adv-av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--g7),var(--am));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.1rem;color:var(--white);margin:0 auto 1rem}
+.adv-card h3{font-size:1rem;font-weight:600;color:var(--g9);margin-bottom:.3rem}
+.adv-role{font-size:.78rem;color:var(--amd);font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.7rem}
+.adv-email{font-size:.8rem;color:var(--g7);word-break:break-all}
+.adv-email:hover{color:var(--amd)}
+/* NUMBERS */
+.numbers{padding:5rem 0;background:var(--g9)}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.num-val{font-family:'Fraunces',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;color:var(--aml);line-height:1;margin-bottom:.5rem}
+.num-lbl{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.4}
+/* JOIN */
+.join{padding:7rem 1.5rem;background:var(--g8);text-align:center;position:relative;overflow:hidden}
+.join::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(232,124,42,.12),transparent 60%)}
+.join-inner{position:relative;z-index:2}
+.join h2{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;color:var(--white);margin-bottom:1rem}
+.join p{max-width:520px;margin:0 auto 2.25rem;color:rgba(255,255,255,.7);font-size:.97rem}
+/* FOOTER */
+.footer{background:var(--g9);padding:4rem 0 2rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.footer-logo{display:flex;align-items:center;gap:.5rem;margin-bottom:.85rem}
+.footer-logo img{width:40px;height:40px;object-fit:contain;border-radius:50%}
+.footer-logo span{font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;color:var(--white)}
+.footer-brand{color:rgba(255,255,255,.5);font-size:.87rem;max-width:260px}
+.footer h4{font-size:.9rem;color:var(--white);font-weight:600;margin-bottom:.85rem}
+.footer ul li{margin-bottom:.4rem}
+.footer ul li a{color:rgba(255,255,255,.5);font-size:.87rem;transition:color .2s}
+.footer ul li a:hover{color:var(--g2)}
+.footer-contact p{color:rgba(255,255,255,.5);font-size:.87rem;margin-bottom:.35rem}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.25rem;display:flex;justify-content:space-between;align-items:center}
+.footer-bottom p{color:rgba(255,255,255,.3);font-size:.78rem}
+@media(max-width:900px){
+  .about-grid,.teams-grid,.chal-grid,.cct-grid,.adv-grid{grid-template-columns:1fr}
+  .nums-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+}
+@media(max-width:500px){.nums-grid{grid-template-columns:1fr}.hero-btns{flex-direction:column;align-items:flex-start}.footer-bottom{flex-direction:column;gap:.5rem;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="images/cas-logo.png" alt="CAS Logo"/>
+      <span>CAS Sudan</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#challenges">Context</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#advisory">Advisory</a></li>
+      <li><a href="#join" class="nav-cta">Join Us</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu">
+  <a href="#about" class="ml">About</a>
+  <a href="#challenges" class="ml">Context</a>
+  <a href="#teams" class="ml">Teams</a>
+  <a href="#advisory" class="ml">Advisory</a>
+  <a href="#join" class="ml">Join Us</a>
+</div>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">2026 – 2030 Strategic Vision</div>
+    <h1>Climate<br><em>Action</em><br>in Sudan</h1>
+    <p class="hero-tag">From Challenge to Empowerment</p>
+    <p class="sub">A youth-led technical platform bridging Sudan's institutional climate gap — building the next generation of climate leaders, policy experts, and field innovators.</p>
+    <div class="hero-btns">
+      <a href="#about" class="btn btn-primary">Discover Our Mission</a>
+      <a href="#join" class="btn btn-ghost">Join the Fellowship</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="lbl">Who We Are</div>
+        <h2 class="sec-title">Sudan's Youth Climate Platform</h2>
+        <p>CAS (Climate Action in Sudan) is a pioneering youth-led initiative established as a professional and strategic response to the institutional void created by Sudan's ongoing conflict — and the disruption it caused to climate and development work.</p>
+        <p>We operate as a technical bridge connecting young Sudanese talent with the international community, building a generation of experts capable of shaping national climate policy and competing on the global diplomatic stage at COP conferences and beyond.</p>
+      </div>
+      <div class="about-cards reveal rd">
+        <div class="about-card"><div class="about-icon">🌍</div><div><h3>Climate-Peace Nexus</h3><p>Responsible resource management as the foundation for political and social stability in Sudan.</p></div></div>
+        <div class="about-card"><div class="about-icon">📊</div><div><h3>Data Sovereignty</h3><p>Sudan owns its climate data and leads its own national narrative on environmental challenges.</p></div></div>
+        <div class="about-card"><div class="about-icon">⚡</div><div><h3>Inclusion & Innovation</h3><p>Ensuring women and rural communities are represented through open-source technology.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="challenges" id="challenges">
+  <div class="wrap">
+    <div class="sec-hd reveal">
+      <div class="lbl lbl-lt">Strategic Context</div>
+      <h2 class="sec-title">Three Core Challenges We Address</h2>
+    </div>
+    <div class="chal-grid">
+      <div class="chal-card reveal"><div class="chal-num">01</div><h3>Institutional Collapse</h3><p>Sudan's climate institutions have broken down, causing loss of historical data and shutdown of research centres. CAS fills this gap through youth-driven field data collection.</p></div>
+      <div class="chal-card reveal rd"><div class="chal-num">02</div><h3>Generational Gap</h3><p>Disrupted training programs threaten climate expertise continuity. Without young experts, Sudan cannot update NDCs, draft Adaptation Plans, or meet international commitments.</p></div>
+      <div class="chal-card reveal rd2"><div class="chal-num">03</div><h3>Loss & Damage Opportunity</h3><p>Sudan qualifies for international L&D funding but lacks capacity to convert field needs into bankable projects meeting Green Climate Fund standards.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="teams" id="teams">
+  <div class="wrap">
+    <div class="teams-intro sec-hd reveal">
+      <div class="lbl">2026–2030 Structure</div>
+      <h2 class="sec-title">Specialised Working Groups</h2>
+      <p class="sec-desc">Fellows in Phase 2 of the CAS Fellowship are embedded into four specialised working groups — each aligned to a strategic pillar of the initiative.</p>
+    </div>
+    <div class="teams-grid">
+      <div class="team-card reveal"><div class="tc-head"><span class="tc-tag">CBWG</span><h3>Capacity Building</h3></div><p>The backbone of the CAS Digital Academy. Builds a critical mass of <strong>5,000 climate leaders by 2030</strong> through offline curricula, peer educator networks, and climate camps across Sudan's states.</p><ul class="tc-list"><li>Offline-accessible modules</li><li>Peer educator programs</li><li>Climathons & workshops</li><li>Open-source data tools</li></ul></div>
+      <div class="team-card reveal rd"><div class="tc-head"><span class="tc-tag amber">SDGsWG</span><h3>Sustainable Development</h3></div><p>Drives youth engagement with Sudan's SDG commitments, linking Goals 1 (poverty), 2 (food security), and 13 (climate action) to real field conditions and national planning frameworks.</p><ul class="tc-list"><li>VNR report analysis</li><li>SDG-climate policy briefs</li><li>Community campaigns</li><li>International financing</li></ul></div>
+      <div class="team-card reveal"><div class="tc-head"><span class="tc-tag">NDCAWG</span><h3>NDC & Adaptation</h3></div><p>Links local communities to national decision-makers. Works on updating Sudan's NDCs and National Adaptation Plans based on field evidence from the most vulnerable states.</p><ul class="tc-list"><li>NDC & NAP consultations</li><li>Policy briefs for ministries</li><li>Early warning systems</li><li>Community livelihood pilots</li></ul></div>
+      <div class="team-card reveal rd"><div class="tc-head"><span class="tc-tag amber">PAWG</span><h3>Policy & Advocacy</h3></div><p>Sudan's climate diplomatic wing. Trains young technical diplomats for COP representation and crafts high-quality project proposals for international climate funds.</p><ul class="tc-list"><li>COP delegation prep</li><li>Bankable projects (GCF)</li><li>Loss & Damage advocacy</li><li>UNFCCC & YOUNGO network</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cct" id="cct">
+  <div class="wrap">
+    <div class="sec-hd reveal">
+      <div class="lbl">Administrative Structure</div>
+      <h2 class="sec-title">CAS Coordination Team (CCT)</h2>
+      <p class="sec-desc">The CCT is the operational engine — supporting all four SWGF teams and managing logistics, communications, and monitoring.</p>
+    </div>
+    <div class="cct-grid">
+      <div class="cct-item reveal"><span class="cct-icon">🤝</span><div><strong>Partnerships</strong><p>Technical & financial support from UNDP, UNFCCC, and international organisations</p></div></div>
+      <div class="cct-item reveal rd"><span class="cct-icon">📚</span><div><strong>Training & Content</strong><p>Interactive educational media and training programme development</p></div></div>
+      <div class="cct-item reveal rd2"><span class="cct-icon">🎙️</span><div><strong>Speakers & Trainers</strong><p>Preparing cadres for international events and training coordination</p></div></div>
+      <div class="cct-item reveal"><span class="cct-icon">📢</span><div><strong>Media & Communications</strong><p>Digital identity and storytelling around Sudan's climate challenges</p></div></div>
+      <div class="cct-item reveal rd"><span class="cct-icon">📈</span><div><strong>M&E / MELA</strong><p>Monitoring KPIs, field implementation quality, and performance reporting</p></div></div>
+      <div class="cct-item reveal rd2"><span class="cct-icon">🗺️</span><div><strong>Logistics Support</strong><p>Field operations management and team safety across Sudan's states</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="advisory" id="advisory">
+  <div class="wrap">
+    <div class="sec-hd reveal">
+      <div class="lbl">Governance</div>
+      <h2 class="sec-title">Advisory Board</h2>
+      <p class="sec-desc">National and international experts ensuring scientific integrity and strategic guidance for CAS.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card reveal"><div class="adv-av">IN</div><h3>Ikhlass Nimir</h3><p class="adv-role">Journalist</p><a href="mailto:Ikhlassnimir24@gmail.com" class="adv-email">Ikhlassnimir24@gmail.com</a></div>
+      <div class="adv-card reveal rd"><div class="adv-av">BN</div><h3>Nouralla</h3><p class="adv-role">UNDP</p><a href="mailto:bnouralla@yahoo.com" class="adv-email">bnouralla@yahoo.com</a></div>
+      <div class="adv-card reveal rd2"><div class="adv-av">QA</div><h3>Dr. Qusay Abdulaal</h3><p class="adv-role">HCENR</p><a href="mailto:quosay@gmail.com" class="adv-email">quosay@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="numbers">
+  <div class="wrap">
+    <div class="nums-grid">
+      <div class="reveal"><div class="num-val" id="c1">0</div><div class="num-lbl">Climate Leaders by 2030</div></div>
+      <div class="reveal rd"><div class="num-val">4</div><div class="num-lbl">Specialised Working Groups</div></div>
+      <div class="reveal rd2"><div class="num-val">5</div><div class="num-lbl">Years of Strategic Action</div></div>
+      <div class="reveal rd"><div class="num-val">18+</div><div class="num-lbl">Sudan States Targeted</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="join-inner">
+    <div class="lbl lbl-lt">Get Involved</div>
+    <h2>Join the CAS Fellowship</h2>
+    <p>Be part of Sudan's next generation of climate leaders — whether in policy, field work, data science, or climate diplomacy, there's a place for you in CAS.</p>
+    <a href="mailto:cas.sudan@gmail.com" class="btn btn-white">Apply to the Fellowship</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img src="images/cas-logo.png" alt="CAS"/><span>CAS Sudan</span></div>
+        <p class="footer-brand">Climate Action in Sudan — A youth-led platform for climate resilience, policy, and action across Sudan.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#about">About CAS</a></li>
+          <li><a href="#teams">Working Groups</a></li>
+          <li><a href="#cct">Coordination Team</a></li>
+          <li><a href="#advisory">Advisory Board</a></li>
+          <li><a href="#join">Join Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>cas.sudan@gmail.com</p>
+        <p>cas-sd.org</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Climate Action in Sudan – CAS. All rights reserved.</p>
+      <p>From Challenge to Empowerment</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+
+// Mobile menu
+const burger=document.getElementById('burger'),mm=document.getElementById('mmenu');
+burger.addEventListener('click',()=>{
+  const o=mm.classList.toggle('open');
+  document.body.style.overflow=o?'hidden':'';
+  const s=burger.querySelectorAll('span');
+  if(o){s[0].style.transform='translateY(7px) rotate(45deg)';s[1].style.opacity='0';s[2].style.transform='translateY(-7px) rotate(-45deg)';}
+  else{s.forEach(x=>{x.style.transform='';x.style.opacity='';})}
+});
+document.querySelectorAll('.ml').forEach(l=>l.addEventListener('click',()=>{mm.classList.remove('open');document.body.style.overflow='';burger.querySelectorAll('span').forEach(x=>{x.style.transform='';x.style.opacity='';})}));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:'smooth'});}}));
+
+// Reveal
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Counter
+const c1=document.getElementById('c1');
+let done=false;
+const cobs=new IntersectionObserver(es=>{if(es[0].isIntersecting&&!done){done=true;let v=0;const i=setInterval(()=>{v+=63;if(v>=5000){v=5000;clearInterval(i);}c1.textContent=Math.floor(v).toLocaleString();},16);}},{threshold:.5});
+cobs.observe(c1);
+</script>
+</body>
+</html>
